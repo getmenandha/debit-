@@ -1,0 +1,26 @@
+{
+  "receivedAt" : "2026-11-16T11:43:15.357509431Z",
+  "payloadSha256" : "4f2de2b8f838f695c980ef77096300e7bfecec6e4d1871774f0c53f792d2934c",
+  "asposeLicensed" : false,
+  "asposeWordsVersion" : "26.10.0",
+  "requestId" : "REQ-2026-11-16-0001",
+  "renderMs" : 2990,
+  "pages" : 3,
+  "renderWarnings" : [ "Font substitution: Font 'Arial' has not been found. Using 'Liberation Sans' font instead. Reason: table substitution.", "Font substitution: Font 'Calibri' has not been found. Using 'Liberation Sans' font instead. Reason: table substitution." ],
+  "pdfUaCheckMs" : 2752,
+  "pdfUa" : {
+    "compliant" : false,
+    "errors" : 4,
+    "warnings" : 1,
+    "errorSummary" : [ "2x 7.18.1:2 Alternative description missing for an annotation", "2x 7.18.5.2:2 'Link' annotation is missing an alternate description under a 'Content' key" ]
+  },
+  "pdfUaSignable" : {
+    "compliant" : false,
+    "errors" : 7,
+    "warnings" : 1,
+    "errorSummary" : [ "3x 7.1:1.1(14.8) Text object not tagged", "2x 7.18.1:2 Alternative description missing for an annotation", "2x 7.18.5.2:2 'Link' annotation is missing an alternate description under a 'Content' key" ]
+  },
+  "documentSha256" : "358b77dd1769793dd2cb0116793922e488d403dcc6b1db2b9af057d647e42a59",
+  "totalMs" : 6734,
+  "status" : "GENERATED"
+}

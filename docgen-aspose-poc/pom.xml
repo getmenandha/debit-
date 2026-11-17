@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.example.docgen</groupId>
+  <artifactId>docgen-aspose-poc</artifactId>
+  <version>0.1.0-SNAPSHOT</version>
+  <name>DocGen POC - Aspose.Words + Aspose.PDF</name>
+
+  <properties>
+    <maven.compiler.release>17</maven.compiler.release>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- Check https://releases.aspose.com/java/repo/com/aspose/ for the latest versions -->
+    <aspose.words.version>26.10</aspose.words.version>
+    <aspose.pdf.version>26.10</aspose.pdf.version>
+    <jackson.version>2.18.2</jackson.version>
+    <!-- default main class; override with -Dexec.mainClass=... -->
+    <exec.mainClass>com.example.docgen.DocGenPoc</exec.mainClass>
+  </properties>
+
+  <repositories>
+    <!-- Aspose jars are not on Maven Central. In the enterprise, proxy this through Artifactory/Nexus. -->
+    <repository>
+      <id>AsposeJavaAPI</id>
+      <name>Aspose Java API</name>
+      <url>https://releases.aspose.com/java/repo/</url>
+    </repository>
+  </repositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.aspose</groupId>
+      <artifactId>aspose-words</artifactId>
+      <version>${aspose.words.version}</version>
+      <classifier>jdk17</classifier>
+    </dependency>
+    <dependency>
+      <groupId>com.aspose</groupId>
+      <artifactId>aspose-pdf</artifactId>
+      <version>${aspose.pdf.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.11.4</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.5.2</version>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.5.0</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>

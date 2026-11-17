@@ -1,0 +1,73 @@
+[ {
+  "type" : "SIG",
+  "signerId" : "borrower_1",
+  "page" : 2,
+  "x" : 300.6,
+  "yFromTop" : 150.9,
+  "width" : 108.0,
+  "height" : 36.5,
+  "llx" : 300.6,
+  "lly" : 604.6,
+  "urx" : 408.6,
+  "ury" : 641.1
+}, {
+  "type" : "DATE",
+  "signerId" : "borrower_1",
+  "page" : 2,
+  "x" : 408.6,
+  "yFromTop" : 150.9,
+  "width" : 108.0,
+  "height" : 36.5,
+  "llx" : 408.6,
+  "lly" : 604.6,
+  "urx" : 516.6,
+  "ury" : 641.1
+}, {
+  "type" : "SIG",
+  "signerId" : "borrower_2",
+  "page" : 2,
+  "x" : 300.6,
+  "yFromTop" : 187.4,
+  "width" : 108.0,
+  "height" : 36.5,
+  "llx" : 300.6,
+  "lly" : 568.1,
+  "urx" : 408.6,
+  "ury" : 604.6
+}, {
+  "type" : "DATE",
+  "signerId" : "borrower_2",
+  "page" : 2,
+  "x" : 408.6,
+  "yFromTop" : 187.4,
+  "width" : 108.0,
+  "height" : 36.5,
+  "llx" : 408.6,
+  "lly" : 568.1,
+  "urx" : 516.6,
+  "ury" : 604.6
+}, {
+  "type" : "SIG",
+  "signerId" : "lender_1",
+  "page" : 2,
+  "x" : 300.6,
+  "yFromTop" : 223.9,
+  "width" : 108.0,
+  "height" : 37.22,
+  "llx" : 300.6,
+  "lly" : 530.88,
+  "urx" : 408.6,
+  "ury" : 568.1
+}, {
+  "type" : "DATE",
+  "signerId" : "lender_1",
+  "page" : 2,
+  "x" : 408.6,
+  "yFromTop" : 223.9,
+  "width" : 108.0,
+  "height" : 37.22,
+  "llx" : 408.6,
+  "lly" : 530.88,
+  "urx" : 516.6,
+  "ury" : 568.1
+} ]

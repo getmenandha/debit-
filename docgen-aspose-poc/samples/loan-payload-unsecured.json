@@ -1,0 +1,66 @@
+{
+  "documentType": "TERM_LOAN_AGREEMENT",
+  "requestId": "REQ-2026-11-16-0002",
+  "agreement": {
+    "number": "TLA-2026-004513",
+    "date": "2026-11-16"
+  },
+  "lender": {
+    "name": "Example Bank N.A."
+  },
+  "borrower": {
+    "customerId": "CUST-778812",
+    "legalName": "Northwind Logistics LLC",
+    "address": "200 Harbor Way, Suite 400, Wilmington, DE 19801"
+  },
+  "facilities": [
+    {
+      "id": "F-001",
+      "type": "Term Loan A",
+      "currency": "USD",
+      "amount": 2500000.0,
+      "maturityDate": "2031-11-16"
+    },
+    {
+      "id": "F-002",
+      "type": "Revolving Credit",
+      "currency": "USD",
+      "amount": 750000.0,
+      "maturityDate": "2029-11-16"
+    },
+    {
+      "id": "F-003",
+      "type": "Equipment Line",
+      "currency": "USD",
+      "amount": 400000.0,
+      "maturityDate": "2030-05-31"
+    }
+  ],
+  "collateral": [],
+  "covenants": [
+    {
+      "name": "Debt Service Coverage Ratio",
+      "threshold": "minimum 1.25x",
+      "frequency": "quarterly"
+    },
+    {
+      "name": "Total Leverage",
+      "threshold": "maximum 3.50x",
+      "frequency": "quarterly"
+    },
+    {
+      "name": "Audited financial statements",
+      "threshold": "within 120 days of fiscal year end",
+      "frequency": "annually"
+    }
+  ],
+  "signers": [
+    {
+      "id": "borrower_1",
+      "name": "Jane Alvarez",
+      "role": "Borrower - CFO",
+      "email": "jane.alvarez@example.com"
+    }
+  ],
+  "signatureRequired": true
+}
