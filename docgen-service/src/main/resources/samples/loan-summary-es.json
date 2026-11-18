@@ -1,0 +1,40 @@
+{
+  "requestId": "REQ-ES-0001",
+  "agreement": {
+    "number": "TLA-2026-004512",
+    "date": "2026-11-16"
+  },
+  "lender": {
+    "name": "Example Bank N.A."
+  },
+  "borrower": {
+    "legalName": "Logística Peñalara S.L.",
+    "address": "Calle de Alcalá 45, 28014 Madrid"
+  },
+  "facilities": [
+    {
+      "id": "F-001",
+      "typeEs": "Préstamo a plazo A",
+      "currency": "USD",
+      "amount": 2500000.0,
+      "maturityDate": "2031-11-16"
+    },
+    {
+      "id": "F-002",
+      "typeEs": "Línea de crédito renovable",
+      "currency": "USD",
+      "amount": 750000.0,
+      "maturityDate": "2029-11-16"
+    }
+  ],
+  "signers": [
+    {
+      "name": "José Muñoz Ibáñez",
+      "roleEs": "Prestatario, director financiero"
+    },
+    {
+      "name": "Priya Raman",
+      "roleEs": "Prestamista, gestora de relaciones"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "requestId": "REQ-FS-0001",
+  "borrower": {
+    "legalName": "Northwind Logistics LLC"
+  },
+  "facilities": [
+    {
+      "id": "F-001",
+      "type": "Term Loan A",
+      "purpose": "General corporate purposes, including working capital and capital expenditure for site 1",
+      "currency": "USD",
+      "amount": 100000.0,
+      "maturityDate": "2027-04-30"
+    },
+    {
+      "id": "F-002",
+      "type": "Term Loan B",
+      "purpose": "General corporate purposes, including working capital and capital expenditure for site 2",
+      "currency": "USD",
+      "amount": 200000.0,
+      "maturityDate": "2027-07-31"
+    },
+    {
+      "id": "F-003",
+      "type": "Revolving Credit",
+      "purpose": "General corporate purposes, including working capital and capital expenditure for site 3",
+      "currency": "USD",
+      "amount": 300000.0,
+      "maturityDate": "2027-10-31"
+    },
+    {
+      "id": "F-004",
+      "type": "Equipment Line",
+      "purpose": "General corporate purposes, including working capital and capital expenditure for site 4",
+      "currency": "USD",
+      "amount": 400000.0,
+      "maturityDate": "2028-01-31"
+    },
+    {
+      "id": "F-005",
+      "type": "Letter of Credit",
+      "purpose": "General corporate purposes, including working capital and capital expenditure for site 5",
+      "currency": "USD",
+      "amount": 500000.0,
+      "maturityDate": "2028-04-30"
+    }
+  ]
+}

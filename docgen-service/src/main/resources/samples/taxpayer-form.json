@@ -1,0 +1,52 @@
+{
+  "requestId": "REQ-TF-0001",
+  "terms": [
+    {
+      "heading": "Interest",
+      "text": "Interest accrues daily on the outstanding principal at the agreed rate and is payable monthly in arrears."
+    },
+    {
+      "heading": "Prepayment",
+      "text": "The borrower may prepay all or part of the loan on any business day with five business days' notice."
+    },
+    {
+      "heading": "Fees",
+      "text": "An arrangement fee is payable on signing and a commitment fee accrues on undrawn amounts."
+    },
+    {
+      "heading": "Covenants",
+      "text": "The borrower will maintain a debt service coverage ratio of at least 1.25x, tested quarterly."
+    },
+    {
+      "heading": "Events of default",
+      "text": "Non-payment, breach of covenant, insolvency and material adverse change are events of default."
+    },
+    {
+      "heading": "Governing law",
+      "text": "This agreement is governed by the laws of the State of New York."
+    },
+    {
+      "heading": "Notices",
+      "text": "Notices must be in writing and delivered to the addresses set out in the schedule."
+    },
+    {
+      "heading": "Assignment",
+      "text": "The borrower may not assign its rights without the lender's prior written consent."
+    }
+  ],
+  "taxpayer": {
+    "name": "Jane Alvarez",
+    "businessName": "Northwind Logistics LLC",
+    "classification": "LLC",
+    "exemptPayeeCode": "5",
+    "reportingExemptionCode": "-",
+    "address": "200 Harbor Way, Suite 400",
+    "cityStateZip": "Wilmington, DE 19801",
+    "accounts": "CUST-778812",
+    "ein": "12-3456789"
+  },
+  "requester": {
+    "name": "Example Bank N.A.",
+    "address": "1 Example Plaza, New York, NY 10001"
+  }
+}

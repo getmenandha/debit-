@@ -1,0 +1,75 @@
+server:
+  port: 8080
+  shutdown: graceful
+  compression:
+    enabled: true
+    mime-types: application/json
+
+spring:
+  application:
+    name: docgen-service
+  lifecycle:
+    timeout-per-shutdown-phase: 30s
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      probes:
+        enabled: true        # /actuator/health/liveness and /actuator/health/readiness
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+
+docgen:
+  aspose:
+    # One of these, or neither for evaluation mode (watermark + truncated long documents).
+    # ECS: inject ASPOSE_LICENSE_BASE64 from Secrets Manager.
+    license-path: ${ASPOSE_LICENSE_PATH:}
+    license-base64: ${ASPOSE_LICENSE_BASE64:}
+    fonts-dir: ${DOCGEN_FONTS_DIR:}
+  # Run the Aspose.PDF PDF/UA check on every request and return the result (adds ~40% latency).
+  pdfua-check: ${DOCGEN_PDFUA_CHECK:false}
+  # Render each sample payload once at startup so the first real request isn't slow.
+  warm-up: ${DOCGEN_WARM_UP:true}
+  templates:
+    # classpath:/templates/ (built into the image) or file:/opt/docgen/templates/ (mounted volume / synced from S3)
+    location: ${DOCGEN_TEMPLATES_LOCATION:classpath:/templates/}
+    types:
+      TERM_LOAN_AGREEMENT:
+        description: Term loan agreement with facilities, collateral, covenants and signature block, plus disclosures
+        template: loan-agreement-template.docx
+        append: [ disclosures.docx ]
+        schema: term-loan-agreement.schema.json
+        sample: term-loan-agreement.json
+        title: "Term Loan Agreement {/agreement/number}"
+        locale: en-US
+        allow-missing-members: true      # lets empty arrays (e.g. unsecured -> collateral: []) render
+      FACILITY_SCHEDULE:
+        description: Schedule of facilities, one table row per facility
+        template: facility-schedule-template.docx
+        schema: facility-schedule.schema.json
+        sample: facility-schedule.json
+        title: "Schedule of Facilities - {/borrower/legalName}"
+        locale: en-US
+      LOAN_SUMMARY_ES:
+        description: Spanish-language loan summary (Spanish dates and number formats)
+        template: spanish-loan-summary-template.docx
+        schema: loan-summary-es.schema.json
+        sample: loan-summary-es.json
+        title: "Resumen del préstamo a plazo {/agreement/number}"
+        locale: es-ES
+      TAXPAYER_FORM:
+        description: Two-column layout - terms in newspaper columns plus a side-by-side taxpayer form
+        template: two-column-template.docx
+        schema: taxpayer-form.schema.json
+        sample: taxpayer-form.json
+        title: "Taxpayer information - {/taxpayer/name}"
+        locale: en-US
+        retag-layout-tables: true        # form tables marked [layout] are tagged TD, not TH

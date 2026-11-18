@@ -1,0 +1,86 @@
+{
+  "documentType": "TERM_LOAN_AGREEMENT",
+  "requestId": "REQ-2026-11-16-0001",
+  "agreement": {
+    "number": "TLA-2026-004512",
+    "date": "16/11/2026"
+  },
+  "lender": {
+    "name": "Example Bank N.A."
+  },
+  "facilities": [
+    {
+      "id": "F-001",
+      "type": "Term Loan A",
+      "currency": "usd",
+      "amount": -5,
+      "maturityDate": "2031-11-16"
+    },
+    {
+      "id": "F-002",
+      "type": "Revolving Credit",
+      "currency": "USD",
+      "amount": 750000.0,
+      "maturityDate": "2029-11-16"
+    },
+    {
+      "id": "F-003",
+      "type": "Equipment Line",
+      "currency": "USD",
+      "amount": 400000.0,
+      "maturityDate": "2030-05-31"
+    }
+  ],
+  "collateral": [
+    {
+      "description": "Warehouse at 12 Dock Road, Newark NJ",
+      "currency": "USD",
+      "value": 3100000.0,
+      "ltvLimitPct": 75
+    },
+    {
+      "description": "Fleet of 40 delivery vehicles",
+      "currency": "USD",
+      "value": 1200000.0,
+      "ltvLimitPct": 60
+    }
+  ],
+  "covenants": [
+    {
+      "name": "Debt Service Coverage Ratio",
+      "threshold": "minimum 1.25x",
+      "frequency": "quarterly"
+    },
+    {
+      "name": "Total Leverage",
+      "threshold": "maximum 3.50x",
+      "frequency": "quarterly"
+    },
+    {
+      "name": "Audited financial statements",
+      "threshold": "within 120 days of fiscal year end",
+      "frequency": "annually"
+    }
+  ],
+  "signers": [
+    {
+      "id": "borrower_1",
+      "name": "Jane Alvarez",
+      "role": "Borrower - CFO",
+      "email": "jane.alvarez@example.com"
+    },
+    {
+      "id": "borrower_2",
+      "name": "Marcus Chen",
+      "role": "Borrower - CEO",
+      "email": "marcus.chen@example.com"
+    },
+    {
+      "id": "lender_1",
+      "name": "Priya Raman",
+      "role": "Lender - Relationship Manager",
+      "email": "priya.raman@example.com"
+    }
+  ],
+  "signatureRequired": true
+}

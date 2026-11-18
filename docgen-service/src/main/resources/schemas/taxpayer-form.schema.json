@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Taxpayer form payload",
+  "type": "object",
+  "properties": {
+    "requestId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "terms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "heading": {
+            "type": "string",
+            "minLength": 1
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "heading",
+          "text"
+        ]
+      }
+    },
+    "taxpayer": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "businessName": {
+          "type": "string"
+        },
+        "classification": {
+          "enum": [
+            "INDIVIDUAL",
+            "C_CORP",
+            "S_CORP",
+            "LLC"
+          ]
+        },
+        "exemptPayeeCode": {
+          "type": "string"
+        },
+        "reportingExemptionCode": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cityStateZip": {
+          "type": "string",
+          "minLength": 1
+        },
+        "accounts": {
+          "type": "string"
+        },
+        "ein": {
+          "type": "string",
+          "pattern": "^\\d{2}-\\d{7}$"
+        }
+      },
+      "required": [
+        "name",
+        "classification",
+        "address",
+        "cityStateZip",
+        "ein"
+      ]
+    },
+    "requester": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "address": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "name",
+        "address"
+      ]
+    }
+  },
+  "required": [
+    "terms",
+    "taxpayer",
+    "requester"
+  ]
+}

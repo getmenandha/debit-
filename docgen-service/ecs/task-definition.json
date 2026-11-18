@@ -1,0 +1,47 @@
+{
+  "family": "docgen-service",
+  "requiresCompatibilities": ["FARGATE"],
+  "networkMode": "awsvpc",
+  "cpu": "2048",
+  "memory": "4096",
+  "runtimePlatform": { "operatingSystemFamily": "LINUX", "cpuArchitecture": "X86_64" },
+  "executionRoleArn": "arn:aws:iam::<ACCOUNT_ID>:role/docgen-ecs-execution-role",
+  "taskRoleArn": "arn:aws:iam::<ACCOUNT_ID>:role/docgen-ecs-task-role",
+  "containerDefinitions": [
+    {
+      "name": "docgen-service",
+      "image": "<ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/docgen-service:<TAG>",
+      "essential": true,
+      "portMappings": [{ "containerPort": 8080, "protocol": "tcp", "name": "http" }],
+      "environment": [
+        { "name": "DOCGEN_PDFUA_CHECK", "value": "false" },
+        { "name": "DOCGEN_WARM_UP", "value": "true" },
+        { "name": "DOCGEN_TEMPLATES_LOCATION", "value": "classpath:/templates/" }
+      ],
+      "secrets": [
+        {
+          "name": "ASPOSE_LICENSE_BASE64",
+          "valueFrom": "arn:aws:secretsmanager:<REGION>:<ACCOUNT_ID>:secret:docgen/aspose-license"
+        }
+      ],
+      "healthCheck": {
+        "command": ["CMD-SHELL", "curl -fsS http://localhost:8080/actuator/health/liveness || exit 1"],
+        "interval": 30,
+        "timeout": 5,
+        "retries": 3,
+        "startPeriod": 90
+      },
+      "stopTimeout": 40,
+      "readonlyRootFilesystem": false,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/docgen-service",
+          "awslogs-region": "<REGION>",
+          "awslogs-stream-prefix": "docgen",
+          "awslogs-create-group": "true"
+        }
+      }
+    }
+  ]
+}

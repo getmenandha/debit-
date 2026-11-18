@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Facility schedule payload",
+  "type": "object",
+  "properties": {
+    "requestId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "borrower": {
+      "type": "object",
+      "properties": {
+        "legalName": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "legalName"
+      ]
+    },
+    "facilities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "purpose": {
+            "type": "string",
+            "minLength": 1
+          },
+          "currency": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$",
+            "description": "ISO 4217 currency code"
+          },
+          "amount": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "maturityDate": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "description": "ISO date yyyy-MM-dd"
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "purpose",
+          "amount",
+          "maturityDate"
+        ]
+      }
+    }
+  },
+  "required": [
+    "borrower",
+    "facilities"
+  ]
+}

@@ -4,10 +4,20 @@ This repository is the proof of concept for a PDF-as-a-service for loan document
 
 | Folder | What it is |
 |---|---|
+| [`docgen-service/`](docgen-service/README.md) | **Deployable Spring Boot service** (Docker / AWS ECS): REST API that takes a JSON payload and returns PDF/UA or DOCX bytes, with JSON Schema validation, signature anchors, audit log, Dockerfile, ECS task definition, and sample clients in Java, Python and curl |
 | [`docgen-aspose-poc/`](docgen-aspose-poc/README.md) | Java/Maven POC: payload validation, Word template rendering (Aspose.Words), PDF/UA output, signature positions, signature fields and validation (Aspose.PDF), audit record. It also includes the accessibility showcase and the layout tests (dynamic rows, text overflow, two-column layouts, Spanish) |
 | [`a11y-check/`](a11y-check/README.md) | Vendor-neutral PDF accessibility checker (veraPDF PDF/UA-1 and WCAG 2.2, plus a PDFBox tag inventory). It works on any PDF, whatever produced it |
 
-## Quick start
+## Quick start: the service
+
+```bash
+cd docgen-service
+mvn test && mvn package -DskipTests
+java -jar target/docgen-service.jar                 # http://localhost:8080/swagger-ui.html
+cd clients/java && java DocGenClient.java           # or clients/python, clients/curl
+```
+
+## Quick start: the POC
 
 Prerequisites: JDK 17+ and Maven. You also need access to the Aspose Maven repo (`https://releases.aspose.com/java/repo/`) or an internal mirror of it, and to Maven Central.
 

@@ -1,0 +1,8 @@
+target/
+out/
+clients/
+ecs/
+*.lic
+.idea/
+*.iml
+.git
